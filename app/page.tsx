@@ -1,7 +1,14 @@
 import Image from "next/image";
+import Hero from "./components/Hero";
+import Education from "./components/Education";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <p>Hello, Portfolio</p>
+   <>
+     <Hero />
+     <Education />
+     <Projects />
+   </>
   );
 }
