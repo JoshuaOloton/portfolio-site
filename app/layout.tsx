@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const geistSans = localFont({
@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Joshua's Portfilio",
+  title: "Joshua's Portfolio",
   description: "My portfolio website built using Next.Js and Tailwind CSS",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -37,7 +37,7 @@ export default function RootLayout({
            enableSystem
            disableTransitionOnChange
         >
-          <Navbar />
+          <Header />
           {children}
           {/* <Footer /> */}
         </ThemeProvider>

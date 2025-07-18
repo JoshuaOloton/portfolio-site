@@ -1,11 +1,14 @@
-import React from 'react'
+"use client";
+
+import { useScrollToSection } from '@/app/hooks/useScrollToSection';
 import { FloatingNav } from './ui/floating-navbar'
 import { CiHome, CiCircleInfo  } from "react-icons/ci";
 import { IoIosContact } from "react-icons/io";
 import { GrProjects } from "react-icons/gr";
 
-
 const Navbar = () => {
+
+  const { servicesRef } = useScrollToSection();
 
   const navLinks = [
     {
@@ -21,7 +24,8 @@ const Navbar = () => {
     {
       name: 'Services',
       link: '#services',
-      icon: <CiCircleInfo />
+      icon: <CiCircleInfo />,
+      ref: servicesRef
     },
     {
       name: 'Projects',

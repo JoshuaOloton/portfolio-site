@@ -9,6 +9,8 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+
+
 export const FloatingNav = ({
   navItems,
   className,
@@ -17,6 +19,7 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: JSX.Element;
+    ref?: React.RefObject<HTMLDivElement>;
   }[];
   className?: string;
 }) => {
@@ -65,11 +68,11 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 p-3 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative dark:text-neutral-50 items-center flex space-x-1 p-3 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 group"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
+            <span className="block sm:hidden transition-transform group-hover:scale-110 group-hover:text-white">{navItem.icon}</span>
+            <span className="hidden sm:block text-sm transition-transform group-hover:scale-110 group-hover:text-white">{navItem.name}</span>
           </Link>
         ))}
       </motion.div>
