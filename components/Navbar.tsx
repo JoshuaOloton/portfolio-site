@@ -8,8 +8,6 @@ import { GrProjects } from "react-icons/gr";
 
 const Navbar = () => {
 
-  const { servicesRef } = useScrollToSection();
-
   const navLinks = [
     {
       name: 'Home',
@@ -24,13 +22,12 @@ const Navbar = () => {
     {
       name: 'Services',
       link: '#services',
-      icon: <CiCircleInfo />,
-      ref: servicesRef
+      icon: <CiCircleInfo />
     },
     {
       name: 'Projects',
       link: '#projects',
-      icon: <GrProjects />
+      icon: <GrProjects />,
     },
     {
       name: 'Contact',

@@ -4,15 +4,18 @@ import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { projects } from "@/app/data/projects";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
-type Props = {};
+type Props = {
+  ref: React.RefObject<HTMLDivElement>;
+};
 
-const Projects = ({}: Props) => {
-  const projectsRef = useRef<HTMLDivElement>(null);
-
+const Projects = ({ ref }: Props) => {
+  const projectsCarouselRef = useRef<HTMLDivElement | null>(null);
+  
   return (
-    <section className={`${inter.className} section_layout h-full`}>
+    <section className={`${inter.className} section_layout h-full`} ref={ref} id="projects">
       <div className="flex justify-center items-center relative h-screen">
         <div className="absolute top-4 md:top-6">
           <h3 className="section_header">MY PROJECTS AT A GLANCE</h3>
@@ -20,7 +23,7 @@ const Projects = ({}: Props) => {
             Explore the projects that showcase my skills and creative solutions.
           </p>
         </div>
-        <div className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar" ref={projectsRef}>
+        <div className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar" ref={projectsCarouselRef}>
           {projects.map((project) => (
             <div
               key={project.id}
@@ -49,8 +52,8 @@ const Projects = ({}: Props) => {
         </div>
         <ChevronLeft
             onClick={() => {
-              if (projectsRef.current) {
-                projectsRef.current.scrollBy({
+              if (projectsCarouselRef.current) {
+                projectsCarouselRef.current.scrollBy({
                   left: -300,
                   behavior: "smooth",
                 });
@@ -60,8 +63,8 @@ const Projects = ({}: Props) => {
           />
           <ChevronRight
             onClick={() => {
-              if (projectsRef.current) {
-                projectsRef.current.scrollBy({
+              if (projectsCarouselRef.current) {
+                projectsCarouselRef.current.scrollBy({
                   left: 300,
                   behavior: "smooth",
                 });

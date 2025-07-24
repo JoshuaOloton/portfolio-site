@@ -6,8 +6,15 @@ import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
+import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
-const Hero = () => {
+type Props = {
+  onProjectsClick: () => void;
+}
+
+const Hero = ({ onProjectsClick }: Props) => {
+  const { scrollToSection } = useScrollToSection();
+  
   return (
     <section className={`${inter.className} w-full h-screen snap-start`}>
       {/* <HeroHighlight> */}
@@ -120,6 +127,7 @@ const Hero = () => {
               containerClassName="rounded-full"
               as="button"
               className="dark:bg-black text-white flex items-center space-x-2"
+              onClick={onProjectsClick}
             >
               <FaArrowDownLong />
               <span>See My Projects</span>
