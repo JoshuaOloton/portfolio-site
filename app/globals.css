@@ -6,13 +6,14 @@
     --radius: 0.5rem;
 
     --background: #171717;
+    /* --background: #1a1c2c; */
     --foreground: #ededed;
   }
 }
 
 @layer utilities {
   .section_layout {
-    @apply w-full py-10 text-center min-h-screen snap-start max-w-5xl mx-auto;
+    @apply w-full py-24 text-center min-h-screen snap-start max-w-5xl mx-auto border border-gray-800 border-dashed rounded-2xl;
   }
   
   .section_header {
