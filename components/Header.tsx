@@ -7,7 +7,8 @@ type Props = {}
 
 const Header = ({}: Props) => {
   return (
-    <header className='sticky top-0 flex justify-between items-center p-5 max-w-6xl mx-auto'>
+    <header className='absolute top-0 left-0 right-0 flex justify-between items-center p-5 max-w-6xl mx-auto bg:black/50 backdrop-blur-md z-20'>
+    {/* <header className='sticky top-0 flex justify-between items-center p-5 max-w-6xl mx-auto bg:black/50 backdrop-blur-md z-20'> */}
       <motion.div 
         className='flex gap-4'
         initial={{ 
