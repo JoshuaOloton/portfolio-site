@@ -49,7 +49,7 @@ const Header = ({}: Props) => {
       </motion.div>
 
       <motion.div 
-        className='flex items-center gap-2'
+        className='flex items-center gap-2 group'
         initial={{ 
           opacity: 0,
           scale: 0,
@@ -64,14 +64,14 @@ const Header = ({}: Props) => {
           duration: 1.5
         }}
       >
-        <p className='cursor-pointer text-gray-500 text-sm font-semibold hidden md:block'>Get in touch</p>
+        <p className='cursor-pointer text-gray-500 text-sm font-semibold hidden md:block group-hover:animate-jiggle-once'>Get in touch</p>
         <SocialIcon 
           network='email'
           url='mailto:olotonjoshua23@gmail.com' 
           style={{ width: 35, height: 35 }}
           bgColor='#24292e'   
           fgColor='gray'  
-          className='transition-transform hover:animate-pulse hover:scale-90'
+          className='transition-transform group-hover:animate-pulse group-hover:scale-90'
         />
       </motion.div>
     </header>

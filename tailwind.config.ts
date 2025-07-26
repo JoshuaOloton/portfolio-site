@@ -24,6 +24,17 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        jiggle: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-7deg)" },
+          "75%": { transform: "rotate(7deg)" },
+        }
+      },
+      animation: {
+        "jiggle-once": "jiggle 100ms ease-in 0s 1 forwards",
+        "jiggle": "jiggle 300ms ease-in-out infinite", 
+      }
     },
   },
   plugins: [
