@@ -5,7 +5,6 @@ import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { projects } from "@/app/data/projects";
 import React, { useRef, useEffect, useState } from "react";
-import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
 type Props = {
   ref: React.RefObject<HTMLDivElement>;
@@ -50,7 +49,7 @@ const Projects = ({ ref }: Props) => {
         <div aria-label="Projects Carousel" className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar" ref={projectsCarouselRef}>
           {projects.map((project) => (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.6 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               key={project.id}

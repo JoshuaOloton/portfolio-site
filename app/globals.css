@@ -13,11 +13,11 @@
 
 @layer utilities {
   .section_layout {
-    @apply w-full py-24 text-center min-h-screen snap-start max-w-5xl mx-auto border border-gray-800 border-dashed rounded-2xl;
+    @apply w-full py-24 text-center min-h-screen max-w-5xl mx-auto snap-start border border-gray-700 border-dashed rounded-2xl;
   }
   
   .section_header {
-    @apply font-bold text-xl md:text-4xl mb-3 tracking-widest md:tracking-[20px] text-gray-500;
+    @apply font-bold text-xl md:text-4xl mb-5 tracking-widest md:tracking-[20px] text-gray-500;
   }
 
   .section_subheader {
