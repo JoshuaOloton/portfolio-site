@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Education from "@/components/Education";
+import AboutMe from "@/components/AboutMe";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
@@ -11,18 +12,21 @@ import { useRef } from "react";
 
 export default function Home() {
   
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const contactMeSectionRef = useRef<HTMLDivElement | null>(null);
   const projectsSectionRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToProjectSection = () => projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
 
   return (
    <main className="flex flex-col justify-center items-center z-0">
-     <div className="px-10 py-0 md:px-0 snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
+     <div ref={containerRef} className="px-10 py-0 md:px-0 snap-y snap-mandatory overflow-y-scroll h-screen w-screen relative">
       <Hero onProjectsClick={scrollToProjectSection} />
+      <AboutMe containerRef={containerRef} />
       <Services />
       <Projects ref={projectsSectionRef} />
       <Skills />
-      <ContactMe />
+      <ContactMe ref={contactMeSectionRef} />
        {/* <Education /> */}
      </div>
    </main>
