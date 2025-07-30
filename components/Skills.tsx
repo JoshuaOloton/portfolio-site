@@ -7,7 +7,7 @@ import Skill from "./Skill"
 
 const Skills = () => {
   return (
-    <section className={`${inter.className} section_layout`} id="services">
+    <section className={`${inter.className} section_layout`} id="skills">
       <div className="flex flex-col items-center justify-center h-screen">
         <div>
           <h2 className="section_header">SKILLS</h2>

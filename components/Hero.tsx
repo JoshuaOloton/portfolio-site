@@ -13,8 +13,7 @@ type Props = {
 }
 
 const Hero = ({ onProjectsClick }: Props) => {
-  const { scrollToSection } = useScrollToSection();
-  
+
   return (
     <section className={`${inter.className} w-full h-screen snap-start`}>
       {/* <HeroHighlight> */}
@@ -35,7 +34,8 @@ const Hero = ({ onProjectsClick }: Props) => {
                 ease: [0.4, 0.0, 0.2, 1],
               }}
             >
-              Hi!&#128075;
+              Hi!
+              <span className="inline-block animate-jiggle">&#128075;</span>
             </motion.p>
             <motion.span
               initial={{ opacity: 0 }}
