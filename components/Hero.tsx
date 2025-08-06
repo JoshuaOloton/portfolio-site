@@ -56,6 +56,7 @@ const Hero = ({ onProjectsClick }: Props) => {
                 "Software Engineer",
                 "Web Developer",
                 "Tech Enthusiast",
+                "Mobile App Developer",
               ]}
               loop={true}
               cursor={true}
