@@ -9,6 +9,7 @@ import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import ContactMe from "@/components/ContactMe";
 import { useRef } from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   
@@ -28,6 +29,7 @@ export default function Home() {
       <Skills />
       <ContactMe ref={contactMeSectionRef} />
        {/* <Education /> */}
+       <Footer />
      </div>
    </main>
   );
