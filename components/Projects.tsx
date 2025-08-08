@@ -38,11 +38,11 @@ const Projects = ({ ref }: Props) => {
   }, []);
   
   return (
-    <section className={`${inter.className} section_layout h-full`} ref={ref} id="projects">
+    <section className={`${inter.className} section-layout h-full`} ref={ref} id="projects">
       <div className="flex justify-center items-center relative h-screen">
         <div className="absolute top-4 md:top-6">
-          <h3 className="section_header">MY PROJECTS AT A GLANCE</h3>
-          <p className="section_subheader">
+          <h3 className="section-header">MY PROJECTS AT A GLANCE</h3>
+          <p className="section-subheader">
             Explore the projects that showcase my skills and creative solutions.
           </p>
         </div>
@@ -53,7 +53,7 @@ const Projects = ({ ref }: Props) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               key={project.id}
-              className="w-full px-52 py-10 flex-shrink-0 flex flex-col gap-0 snap-center bg-[#1A1A1A] border border-gray-800 rounded-2xl shadow-lg"
+              className="w-full px-52 py-10 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg"
             >
               <motion.img 
                 initial={{ y: -100 }}

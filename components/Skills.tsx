@@ -7,11 +7,11 @@ import Skill from "./Skill"
 
 const Skills = () => {
   return (
-    <section className={`${inter.className} section_layout`} id="skills">
+    <section className={`${inter.className} section-layout`} id="skills">
       <div className="flex flex-col items-center justify-center h-screen">
         <div>
-          <h2 className="section_header">SKILLS</h2>
-          <p className="section_subheader">A list of technologies that I am proficient in.</p>
+          <h2 className="section-header">SKILLS</h2>
+          <p className="section-subheader">A list of technologies that I am proficient in.</p>
         </div>
         <motion.div
           initial={{ opacity: 0 }}

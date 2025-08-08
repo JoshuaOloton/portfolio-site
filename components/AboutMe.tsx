@@ -38,7 +38,7 @@ const AboutMe = ({ containerRef }: Props) => {
   return (
     <section
       ref={targetRef}
-      className={`${inter.className} section_layout h-[200vh] relative`}
+      className={`${inter.className} section-layout h-[200vh] relative`}
       id="about"
     >
       <div className="flex flex-col items-center justify-center h-full">

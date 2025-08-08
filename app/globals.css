@@ -12,16 +12,16 @@
 }
 
 @layer utilities {
-  .section_layout {
-    @apply w-full py-24 text-center min-h-screen max-w-5xl mx-auto snap-start border border-gray-700 border-dashed rounded-2xl;
+  .section-layout {
+    @apply w-full py-24 text-center min-h-screen max-w-5xl mx-auto snap-start border border-gray-800 border-dashed rounded-2xl;
   }
   
-  .section_header {
-    @apply font-bold text-xl md:text-4xl mb-5 tracking-widest md:tracking-[20px] text-gray-500;
+  .section-header {
+    @apply font-bold text-xl md:text-4xl mb-5 tracking-widest md:tracking-[20px] text-gray-100;
   }
 
-  .section_subheader {
-    @apply font-medium text-sm md:text-base tracking-[3px] text-gray-500 uppercase;
+  .section-subheader {
+    @apply font-medium text-sm md:text-base tracking-[3px] text-gray-400 uppercase;
   }
   
   .no-scrollbar::-webkit-scrollbar {
