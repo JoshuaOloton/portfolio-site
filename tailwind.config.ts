@@ -29,11 +29,22 @@ export default {
           "0%, 100%": { transform: "rotate(0deg)" },
           "25%": { transform: "rotate(-7deg)" },
           "75%": { transform: "rotate(7deg)" },
+        },
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "15%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "25%": { transform: "rotate(14deg)" },
+          "30%": { transform: "rotate(-4deg)" },
+          "35%": { transform: "rotate(10deg)" },
+          "40%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
         }
       },
       animation: {
         "jiggle-once": "jiggle 100ms ease-in 0s 1 forwards",
         "jiggle": "jiggle 300ms ease-in-out infinite", 
+        "wave-loop": "wave 1.8s ease-in infinite",
       }
     },
   },

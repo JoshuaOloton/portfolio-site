@@ -35,7 +35,7 @@ const Hero = ({ onProjectsClick }: Props) => {
               }}
             >
               Hi!
-              <span className="inline-block animate-jiggle">&#128075;</span>
+              <span className="inline-block animate-wave-loop">&#128075;</span>
             </motion.p>
             <motion.span
               initial={{ opacity: 0 }}
