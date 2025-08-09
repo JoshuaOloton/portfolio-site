@@ -1,6 +1,11 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Dot, SquareArrowOutUpRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Dot,
+  SquareArrowOutUpRight,
+} from "lucide-react";
 import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { projects } from "@/app/data/projects";
@@ -20,7 +25,7 @@ const Projects = ({ ref }: Props) => {
 
   useEffect(() => {
     const ref = projectsCarouselRef.current;
-    
+
     if (ref) {
       ref.scrollLeft = 0; // Reset scroll position on mount
 
@@ -36,17 +41,55 @@ const Projects = ({ ref }: Props) => {
       };
     }
   }, []);
-  
+
+  const titleText: string = "MY PROJECTS AT A GLANCE";
+
   return (
-    <section className={`${inter.className} section-layout h-full`} ref={ref} id="projects">
+    <section
+      className={`${inter.className} section-layout h-full`}
+      ref={ref}
+      id="projects"
+    >
       <div className="flex justify-center items-center relative h-screen">
         <div className="absolute top-4 md:top-6">
-          <h3 className="section-header">MY PROJECTS AT A GLANCE</h3>
-          <p className="section-subheader">
+          <motion.h3 
+            className="section-header"
+            initial="initial"
+            whileInView="animate"
+            transition={{
+              staggerChildren: 0.02,
+            }}
+            viewport={{ once: true }}
+          >
+            {titleText.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  initial: { y: 50, opacity: 0 },
+                  animate: { y: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="inline-block whitespace-pre"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h3>
+          <motion.p 
+            className="section-subheader"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             Explore the projects that showcase my skills and creative solutions.
-          </p>
+          </motion.p>
         </div>
-        <div aria-label="Projects Carousel" className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar" ref={projectsCarouselRef}>
+        <div
+          aria-label="Projects Carousel"
+          className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar"
+          ref={projectsCarouselRef}
+        >
           {projects.map((project) => (
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
@@ -55,37 +98,44 @@ const Projects = ({ ref }: Props) => {
               key={project.id}
               className="w-full px-52 py-10 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg"
             >
-              <motion.img 
+              <motion.img
                 initial={{ y: -100 }}
                 whileInView={{ y: 0 }}
                 // transition={{ ease: "easeOut" }}
-                src={project.image} 
-                className="w-3/5 mx-auto my-3" 
-                alt={project.title} 
+                src={project.image}
+                className="w-3/5 mx-auto my-3"
+                alt={project.title}
               />
               <h4 className="text-2xl tracking-wider font-bold my-2">
                 {project.title}{" "}
-                <a href={project.visit} target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200">
+                <a
+                  href={project.visit}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200"
+                >
                   <SquareArrowOutUpRight className="inline" />
                 </a>
               </h4>
               <hr className="w-1/5 m-auto border border-yellow-500 my-2" />
-              <p className="text-justify tracking-wide leading-7 my-3">{project.description.substring(0,200)}...</p>
+              <p className="text-justify tracking-wide leading-7 my-3">
+                {project.description.substring(0, 200)}...
+              </p>
               <div className="flex flex-wrap items-center justify-center gap-1 my-3">
                 {project.tags.map((tag, index) => (
                   <React.Fragment key={index}>
-                    <motion.span 
-                      initial={{ opacity: 0, y: 10 }} 
-                      whileInView={{ opacity: 1, y: 0 }} 
-                      transition={{ delay: (index + 1) * 0.95/5 }} 
+                    <motion.span
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: ((index + 1) * 0.95) / 5 }}
                       className="bg-[#1F1F1F] text-gray-200 border border-gray-700 rounded-full px-4 py-1 text-sm font-medium shadow-sm hover:bg-[#2A2A2A] transition-colors duration-200"
-                      >
-                        {tag}
-                      </motion.span>
-                    <motion.span 
-                      initial={{ opacity: 0, y: 10 }} 
-                      whileInView={{ opacity: 1, y: 0 }} 
-                      transition={{ delay: (index + 1) * 0.95/5 }} 
+                    >
+                      {tag}
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: ((index + 1) * 0.95) / 5 }}
                       className="text-gray-300 last:hidden"
                     >
                       <Dot size={26} />
@@ -96,21 +146,21 @@ const Projects = ({ ref }: Props) => {
             </motion.div>
           ))}
         </div>
-        { showLeftButton && (
+        {showLeftButton && (
           <div className="absolute left-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
             <ChevronLeft
-                onClick={() => {
-                  projectsCarouselRef.current?.scrollBy({
-                    left: -300,
-                    behavior: "smooth",
-                  });
-                }}
-                size={26}
-                className="cursor-pointer opacity-30 group-hover:opacity-100 group-hover:duration-500 transition-opacity"
-                />
+              onClick={() => {
+                projectsCarouselRef.current?.scrollBy({
+                  left: -300,
+                  behavior: "smooth",
+                });
+              }}
+              size={26}
+              className="cursor-pointer opacity-30 group-hover:opacity-100 group-hover:duration-500 transition-opacity"
+            />
           </div>
         )}
-        { showRightButton && (
+        {showRightButton && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
             <ChevronRight
               onClick={() => {
@@ -123,7 +173,7 @@ const Projects = ({ ref }: Props) => {
               className="cursor-pointer opacity-30 group-hover:opacity-100 group-hover:duration-500 transition-opacity"
             />
           </div>
-        )}   
+        )}
       </div>
     </section>
   );
