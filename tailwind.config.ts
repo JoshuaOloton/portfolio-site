@@ -44,7 +44,7 @@ export default {
       animation: {
         "jiggle-once": "jiggle 100ms ease-in 0s 1 forwards",
         "jiggle": "jiggle 300ms ease-in-out infinite", 
-        "wave-loop": "wave 1.8s ease-in infinite",
+        "wave-loop": "wave 2.2s ease-in infinite",
       }
     },
   },
