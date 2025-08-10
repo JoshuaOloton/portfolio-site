@@ -22,10 +22,6 @@ const AboutMe = ({ containerRef }: Props) => {
     offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Scroll Progress:", latest);
-  });
-
   const titleText: string = "A LITTLE BIT ABOUT ME";
 
   const titleY = useTransform(scrollYProgress, [0, 0.4], ["0%", "500%"]);

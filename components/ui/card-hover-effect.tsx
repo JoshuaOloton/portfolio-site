@@ -26,7 +26,7 @@ export const HoverEffect = ({
       {items.map((item, idx) => (
         <motion.div
           key={item?.id}
-          className="relative group block p-2 h-full w-full"
+          className="relative group block p-2 h-full w-full -z-10"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           initial={{ opacity: 0 }}
