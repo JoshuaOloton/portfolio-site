@@ -1,6 +1,10 @@
 import { motion } from "motion/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { BsFillSendFill } from "react-icons/bs";
+import { ContactFormSchema } from "@/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useEffect } from "react";
 
 type Props = {};
 
@@ -8,17 +12,32 @@ const ContactForm = ({}: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    reset,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<z.infer<typeof ContactFormSchema>>({
+    resolver: zodResolver(ContactFormSchema),
+  });
 
-  const onSubmit: SubmitHandler<any> = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit: SubmitHandler<z.infer<typeof ContactFormSchema>> = (formData) => {
+    console.log("Form Data:", formData);
     // Handle form submission logic here
+
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(`${formData.message}\n\nFrom ${formData.name} <${formData.email}>`);
+
+    window.location.href = `mailto:olotonjoshua23@gmail.com?subject=${subject}&body=${body}`;
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({ name: "", email: "", message: "" });
+    }
+  }, [isSubmitSuccessful]);
   
   return (
     <motion.form
       method="POST"
+      onSubmit={handleSubmit(onSubmit)}
       className="w-full max-w-lg mx-auto md:mx-0 space-y-6"
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -30,36 +49,45 @@ const ContactForm = ({}: Props) => {
           Your Name <span className="text-red-500">*</span>
         </label>
         <input
+          {...register("name")}
           type="text"
-          name="name"
           placeholder="Enter your name"
           required
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none"
         />
+        {errors.name && (
+          <span className="text-red-500 text-sm mt-1">{errors.name.message}</span>
+        )}
       </div>
       <div>
         <label className="block mb-2 text-sm font-medium text-gray-700">
           Your Email <span className="text-red-500">*</span>
         </label>
         <input
+          {...register("email")}
           type="email"
-          name="email"
           placeholder="Enter your email"
           required
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none"
         />
+        {errors.email && (
+          <span className="text-red-500 text-sm mt-1">{errors.email.message}</span>
+        )}
       </div>
       <div>
         <label className="block mb-2 text-sm font-medium text-gray-700">
           Your Message <span className="text-red-500">*</span>
         </label>
         <textarea
-          name="message"
+          {...register("message")}
           rows={4}
           placeholder="Type your message here"
           required
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none "
         />
+        {errors.message && (
+          <span className="text-red-500 text-sm mt-1">{errors.message.message}</span>
+        )}
       </div>
       <button
         type="submit"
