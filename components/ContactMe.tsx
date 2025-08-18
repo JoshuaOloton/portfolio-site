@@ -1,6 +1,6 @@
 import ContactForm from "./ContactForm";
 import Link from "next/link";
-import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { inter } from "@/app/fonts";
 import { IoMdMail } from "react-icons/io";
 import { motion } from "motion/react";
@@ -15,6 +15,11 @@ const ContactMe = ({ ref }: Props) => {
 
   const socialLinks = [
     {
+      href: "https://github.com/JoshuaOloton",
+      icon: <FaGithub />,
+      text: "JoshuaOloton on Github",
+    },
+    {
       href: "https://www.linkedin.com/in/joshua-oloton/",
       icon: <FaLinkedin />,
       text: "Joshua Oloton on LinkedIn",
@@ -28,7 +33,7 @@ const ContactMe = ({ ref }: Props) => {
       href: "https://x.com/josh_thedev_",
       icon: <FaXTwitter />,
       text: "@josh_thedev_ on X",
-    },
+    }
   ];
 
   return (
@@ -81,7 +86,7 @@ const ContactMe = ({ ref }: Props) => {
 
         {/* Right side - Contact Info */}
         <motion.div
-          className="md:col-span-2 w-full rounded-xl shadow-sm px-8 py-10 space-y-6 text-left"
+          className="md:col-span-2 w-full rounded-xl shadow-sm md:px-8 py-6 md:py-10 space-y-6 text-left"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
@@ -94,9 +99,9 @@ const ContactMe = ({ ref }: Props) => {
                 key={index}
                 href={link.href}
                 target="_blank"
-                className="flex items-center gap-4 hover:text-yellow-500 transition-colors duration-300"
+                className="flex items-center gap-3 md:gap-4 hover:text-yellow-500 transition-colors duration-300 text-sm md:text-xl"
               >
-                <span className="border border-gray-300 rounded-full p-3 text-xl">
+                <span className="border border-gray-300 rounded-full p-3">
                   {link.icon}
                 </span>
                 <span>{link.text}</span>
