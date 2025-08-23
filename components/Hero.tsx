@@ -46,7 +46,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             </motion.span>
           </motion.h3>
           <motion.h3 
-            className="font-semibold text-lg md:text-2xl tracking-[8px] text-gray-500 uppercase"
+            className="font-semibold sm:text-lg md:text-2xl tracking-[8px] text-gray-500 uppercase min-h-14"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2, delay: 2.5 }}
@@ -55,8 +55,11 @@ const Hero = ({ onProjectsClick }: Props) => {
               words={[
                 "Software Engineer",
                 "Web Developer",
-                "Tech Enthusiast",
                 "Mobile App Developer",
+                "Open Source Contributor",
+                "Problem Solver",
+                "Team Player",
+                "Lifelong Learner"
               ]}
               loop={true}
               cursor={true}
