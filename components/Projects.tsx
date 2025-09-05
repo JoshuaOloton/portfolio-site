@@ -42,17 +42,17 @@ const Projects = ({ ref }: Props) => {
     }
   }, []);
 
-  const titleText: string = "MY PROJECTS AT A GLANCE";
+  const titleText: string = "MY PROJeCTS AT A GLANCE";
 
   return (
     <section
       aria-labelledby="projects-heading"
-      className={`${inter.className} section-layout h-full`}
+      className={`${inter.className} section-layout h-[110vh] md:h-screen`}
       ref={ref}
       id="projects"
     >
-      <div className="flex justify-center items-center relative h-screen">
-        <div className="absolute top-4 md:top-6">
+      <div className="flex flex-col justify-center items-center relative w-full">
+        <div className="">
           <motion.h3
             id="projects-heading"
             className="section-header"
@@ -98,17 +98,17 @@ const Projects = ({ ref }: Props) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               key={project.id}
-              className="w-full px-52 py-10 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg"
+              className="w-full px-12 md:px-52 py-0 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg"
             >
               <motion.img
                 initial={{ y: -100 }}
                 whileInView={{ y: 0 }}
                 // transition={{ ease: "easeOut" }}
                 src={project.image}
-                className="w-3/5 mx-auto my-3"
+                className="w-1/2 mx-auto my-3"
                 alt={project.title}
               />
-              <h4 className="text-2xl tracking-wider font-bold my-2">
+              <h4 className="text-lg md:text-xl tracking-wider font-bold my-2">
                 {project.title}{" "}
                 <a
                   href={project.visit}
@@ -116,21 +116,21 @@ const Projects = ({ ref }: Props) => {
                   rel="noopener noreferrer"
                   className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  <SquareArrowOutUpRight className="inline" />
+                  <SquareArrowOutUpRight className="inline w-5 h-5 md:w-10 md:-10" />
                 </a>
               </h4>
               <hr className="w-1/5 m-auto border border-yellow-500 my-2" />
-              <p className="text-justify tracking-wide leading-7 my-3">
+              <p className="text-justify tracking-normal md:tracking-wide leading-7 my-1">
                 {project.description.substring(0, 200)}...
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-1 my-3">
+              <div className="flex flex-wrap items-center justify-center gap-x-0 gap-y-2 md:gap-y-4 my-1 md:my-3">
                 {project.tags.map((tag, index) => (
                   <React.Fragment key={index}>
                     <motion.span
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: ((index + 1) * 0.95) / 5 }}
-                      className="bg-[#1F1F1F] text-gray-200 border border-gray-700 rounded-full px-4 py-1 text-sm font-medium shadow-sm hover:bg-[#2A2A2A] transition-colors duration-200"
+                      className="bg-[#1F1F1F] text-gray-200 border border-gray-700 rounded-full px-4 py-1 text-xs md:text-sm font-medium shadow-sm hover:bg-[#2A2A2A] transition-colors duration-200"
                     >
                       {tag}
                     </motion.span>
@@ -149,7 +149,7 @@ const Projects = ({ ref }: Props) => {
           ))}
         </div>
         {showLeftButton && (
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
+          <div className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
             <ChevronLeft
               onClick={() => {
                 projectsCarouselRef.current?.scrollBy({
@@ -163,7 +163,7 @@ const Projects = ({ ref }: Props) => {
           </div>
         )}
         {showRightButton && (
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
+          <div className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 group p-1 rounded-full">
             <ChevronRight
               onClick={() => {
                 projectsCarouselRef.current?.scrollBy({

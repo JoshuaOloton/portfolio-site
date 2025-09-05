@@ -11,10 +11,10 @@ const ToolItem = ({ tool, itemVariant }: Props) => {
       key={tool.name}
       variants={itemVariant}
       whileHover={{ scale: 1.03 }}
-      className="flex items-center justify-between gap-4 p-3 rounded-md bg-[#161616] border border-gray-800"
+      className="flex items-center justify-between gap-4 p-3 rounded-md bg-[#161616] border border-gray-800 text-sm"
     >
       <span>{tool.name}</span>
-      <span className="text-sm text-gray-400">{tool.level}%</span>
+      <span className="text-gray-400">{tool.level}%</span>
     </motion.li>
   );
 };

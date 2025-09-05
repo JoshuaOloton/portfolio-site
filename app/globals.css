@@ -13,15 +13,19 @@
 
 @layer utilities {
   .section-layout {
-    @apply w-full py-24 text-center min-h-screen max-w-5xl mx-auto snap-start border border-gray-800 border-dashed rounded-2xl;
+    @apply w-full py-24 text-center min-h-screen max-w-5xl mx-auto snap-start border border-gray-900 border-dashed rounded-2xl;
   }
   
   .section-header {
-    @apply font-bold text-xl md:text-4xl mb-5 tracking-widest md:tracking-[20px] text-gray-100;
+    @apply font-bold text-lg sm:text-xl md:text-4xl mb-5 tracking-wider sm:tracking-widest md:tracking-[5px] text-gray-100 whitespace-nowrap uppercase;
   }
 
   .section-subheader {
-    @apply font-medium text-sm md:text-base tracking-[3px] text-gray-400 uppercase;
+    @apply font-medium text-xs md:text-base tracking-wide md:tracking-[3px] text-gray-400 uppercase;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 md:p-3 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none;
   }
   
   .no-scrollbar::-webkit-scrollbar {

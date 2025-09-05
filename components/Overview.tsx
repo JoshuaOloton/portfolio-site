@@ -34,14 +34,10 @@ const Overview = ({ data, itemVariant }: Props) => {
               whileHover={{ scale: 1.06 }}
               className="flex items-center gap-2 bg-[#141414] border border-gray-700 px-3 py-2 rounded-full"
             >
-              <span className="text-sm font-semibold">{f}</span>
+              <span className="text-xs md:text-sm font-semibold">{f}</span>
             </motion.div>
           ))}
         </div>
-
-        <p className="text-xs text-gray-400 text-center mt-2">
-          Proficiency shown as visual guides — percentages are approximate.
-        </p>
       </div>
     </motion.div>
   );

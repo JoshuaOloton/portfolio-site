@@ -4,9 +4,6 @@ import { inter } from "@/app/fonts";
 import { animate, delay, motion, Variants } from "framer-motion";
 import { skills } from "@/app/data/skills";
 import React from "react";
-import LanguageItem from "./LanguageItem";
-import FrameworkCard from "./FrameworkCard";
-import ToolItem from "./ToolItem";
 import Favorites from "./Favorites";
 import Languages from "./Languages";
 import Frameworks from "./Frameworks";
@@ -65,7 +62,7 @@ export default function SkillsSection() {
       className={`${ inter.className } section-layout`}
     >
       <div className="max-w-7xl mx-auto">
-        <header className="mb-8 text-center md:text-left">
+        <header className="mb-8 text-center">
           <motion.h2
             id="skills-heading"
             className="section-header"
@@ -86,13 +83,13 @@ export default function SkillsSection() {
             ))}
           </motion.h2>
           <motion.p
-            className="section-subheader max-w-2xl"
+            className="section-subheader max-w-2xl m-auto"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             // viewport={{ once: true }}
           >
-            Languages, frameworks and tools I use daily — with proficiency
+            Languages, frameworks and tools I use daily, with proficiency
             levels and my favorites highlighted.
           </motion.p>
         </header>

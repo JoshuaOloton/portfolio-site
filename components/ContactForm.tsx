@@ -53,7 +53,7 @@ const ContactForm = ({}: Props) => {
           type="text"
           placeholder="Enter your name"
           required
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none"
+          className="form-input"
         />
         {errors.name && (
           <span className="text-red-500 text-sm mt-1">{errors.name.message}</span>
@@ -68,7 +68,7 @@ const ContactForm = ({}: Props) => {
           type="email"
           placeholder="Enter your email"
           required
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none"
+          className="form-input"
         />
         {errors.email && (
           <span className="text-red-500 text-sm mt-1">{errors.email.message}</span>
@@ -83,7 +83,7 @@ const ContactForm = ({}: Props) => {
           rows={4}
           placeholder="Type your message here"
           required
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none "
+          className="form-input"
         />
         {errors.message && (
           <span className="text-red-500 text-sm mt-1">{errors.message.message}</span>
@@ -91,7 +91,7 @@ const ContactForm = ({}: Props) => {
       </div>
       <button
         type="submit"
-        className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 w-full flex items-center justify-center gap-2 hover:rotate-1 hover:scale-105"
+        className="bg-blue-600 text-sm md:text-base text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 w-full flex items-center justify-center gap-2 hover:rotate-1 hover:scale-105"
       >
         Send Message
         <BsFillSendFill />

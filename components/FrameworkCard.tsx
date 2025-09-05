@@ -14,7 +14,7 @@ const FrameworkCard = ({ framework, itemVariant }: Props) => {
       aria-label={`${framework.name} proficiency ${framework.level} percent`}
     >
       <div className="flex items-center gap-3">
-        <span className="text-sm font-medium">{framework.name}</span>
+        <span className="text-sm text-left font-medium">{framework.name}</span>
         <span className="text-xs text-gray-400 hidden sm:inline">
           • {framework.level}%
         </span>

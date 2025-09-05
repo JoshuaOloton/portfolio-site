@@ -15,11 +15,11 @@ type Props = {
 const Hero = ({ onProjectsClick }: Props) => {
 
   return (
-    <section className={`${inter.className} w-full h-screen snap-start`}>
+    <section className={`${inter.className} w-full h-screen snap-start py-20`}>
       {/* <HeroHighlight> */}
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] h-full w-full max-w-5xl m-auto">
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] xl:grid-cols-[3fr_2fr] h-full w-full max-w-5xl m-auto">
         <div className="flex flex-col justify-center">
-          <motion.h3 className="font-bold text-4xl md:text-6xl my-7 flex">
+          <motion.h3 className="font-bold text-4xl md:text-6xl my-7 flex flex-col xxs:flex-row">
             <motion.p
               initial={{ 
                 x: -100, 
@@ -40,7 +40,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 2 }}
+              transition={{ duration: 1.3, delay: 1.5 }}
             >
               I'm Joshua
             </motion.span>
@@ -49,7 +49,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             className="font-semibold sm:text-lg md:text-2xl tracking-[8px] text-gray-500 uppercase min-h-14"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 2.5 }}
+            transition={{ duration: 2, delay: 2 }}
           >
             <Typewriter
               words={[
@@ -70,7 +70,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             />
           </motion.h3>
           <motion.p 
-            className="mt-5 text-base leading-loose"
+            className="mt-5 lg:mt-0 text-base lg:text-lg leading-loose lg:leading-[2.5]"
             initial={{ 
               opacity: 0,
               y: 50
@@ -81,7 +81,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             }}
             transition={{ 
               duration: 1, 
-              delay: 3.5 
+              delay: 3 
             }}
           >
             I craft intuitive, scalable full-stack applications that bring ideas to life. From clean APIs to dynamic interfaces, I deliver efficient solutions that elevate user experience. Ready to build something exceptional?
@@ -98,22 +98,13 @@ const Hero = ({ onProjectsClick }: Props) => {
             }}
             transition={{ 
               duration: 0.5, 
-              delay: 4.5
+              delay: 3.5
             }}
           >
-            <Typewriter
-              words={[
-                "Let's create something incredible together!"
-              ]}
-              loop={1}
-              cursor={false}
-              typeSpeed={90}
-              deleteSpeed={50}
-              delaySpeed={2500}
-            />
+            Let's create something incredible together!
           </motion.p>
           <motion.div 
-            className="my-10"
+            className="my-10 lg:my-6"
             initial={{ 
               opacity: 0,
               x: -200
@@ -124,7 +115,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             }}
             transition={{ 
               duration: 0.5, 
-              delay: 4.5
+              delay: 3.5
             }}
           >
             <HoverBorderGradient

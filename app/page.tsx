@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
    <main className="flex flex-col justify-center items-center z-0">
-     <div ref={containerRef} className="px-10 py-0 md:px-0 snap-y snap-mandatory overflow-y-scroll h-screen w-screen relative">
+     <div ref={containerRef} className="px-10 py-0 snap-y snap-mandatory overflow-y-scroll h-screen w-screen relative">
       <Hero onProjectsClick={scrollToProjectSection} />
       <AboutMe containerRef={containerRef} />
       <Services />

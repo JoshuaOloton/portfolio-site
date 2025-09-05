@@ -22,7 +22,7 @@ const ContactMe = ({ ref }: Props) => {
     {
       href: "https://www.linkedin.com/in/joshua-oloton/",
       icon: <FaLinkedin />,
-      text: "Joshua Oloton on LinkedIn",
+      text: "joshua-oloton on LinkedIn",
     },
     {
       href: "mailto:olotonjoshua23@gmail.com",
@@ -42,9 +42,9 @@ const ContactMe = ({ ref }: Props) => {
       ref={ref}
       id="contact"
     >
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:h-screen px-6 py-16 md:px-20 md:py-24 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:h-screen px-6 py-16 md:px-20 md:py-24 items-center">
         {/* Left side - Form */}
-        <div className="md:col-span-3 w-full">
+        <div className="lg:col-span-3 w-full">
           <div className="text-center md:text-left mb-8">
             <motion.h2
               className="section-header text-3xl font-bold mb-4"
@@ -86,7 +86,7 @@ const ContactMe = ({ ref }: Props) => {
 
         {/* Right side - Contact Info */}
         <motion.div
-          className="md:col-span-2 w-full rounded-xl shadow-sm md:px-8 py-6 md:py-10 space-y-6 text-left"
+          className="lg:col-span-2 w-full rounded-xl shadow-sm md:px-8 py-6 md:py-10 space-y-6 text-left"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
@@ -99,7 +99,7 @@ const ContactMe = ({ ref }: Props) => {
                 key={index}
                 href={link.href}
                 target="_blank"
-                className="flex items-center gap-3 md:gap-4 hover:text-yellow-500 transition-colors duration-300 text-sm md:text-xl"
+                className="flex items-center gap-3 md:gap-4 hover:text-yellow-500 transition-colors duration-300 text-sm md:text-base"
               >
                 <span className="border border-gray-300 rounded-full p-3">
                   {link.icon}

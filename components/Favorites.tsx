@@ -13,18 +13,18 @@ const Favorites = ({ data, itemVariant }: Props) => {
     >
       <h3 className="text-xl font-semibold mb-3">Favorites</h3>
       <p className="text-sm text-gray-300 mb-4">
-        These are the tools I enjoy working with most — my “happy stack”.
+        These are the tools I enjoy working with most — my “go-to stack”.
       </p>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap justify-center gap-3">
         {data.map((fav, index) => (
           <motion.span
             key={index}
             variants={itemVariant}
             whileHover={{ scale: 1.04 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1DB954]/30 via-transparent to-transparent border border-[#2b2b2b] px-4 py-2 rounded-full text-sm font-medium"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1DB954]/30 via-transparent to-transparent border border-[#2b2b2b] px-4 py-2 rounded-full text-xs md:text-sm font-medium"
             aria-label={`Favorite: ${fav}`}
           >
-            <span className="px-2 py-1 bg-[#1DB954] text-black rounded-full text-xs font-semibold">
+            <span className="px-1 py-[1px] md:px-2 md:py-1 bg-[#1DB954] text-black rounded-full text-xs font-semibold">
               ★
             </span>
             {fav}

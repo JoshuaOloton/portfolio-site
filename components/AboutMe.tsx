@@ -29,15 +29,15 @@ const AboutMe = ({ containerRef }: Props) => {
   const titleScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.5]);
 
   const imageScale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.3], [0.2, 1]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
 
   return (
     <section
       ref={targetRef}
-      className={`${inter.className} section-layout h-[200vh] relative`}
+      className={`${inter.className} section-layout h-[200vh] md:h-[200vh] relative`}
       id="about"
     >
-      <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex flex-col items-center justify-center md:justify-center h-full border border-transparent">
         <motion.h2
           style={{ y: titleY, scale: titleScale, opacity: titleOpacity }}
           initial="initial"
@@ -45,8 +45,9 @@ const AboutMe = ({ containerRef }: Props) => {
           transition={{
             staggerChildren: 0.02
           }}
-          className="font-bold text-xl md:text-4xl mb-5 tracking-widest md:tracking-[20px] text-gray-300 -z-50"
+          className="section-header -z-50"
         >
+          {/* {titleText} */}
           {titleText.split("").map((char, index) => (
             <motion.span
               key={index}
@@ -66,12 +67,12 @@ const AboutMe = ({ containerRef }: Props) => {
         <motion.img
           src="/images/joshua.jpeg"
           alt="Joshua's photo"
-          className="w-80 rounded-3xl z-50 my-10"
+          className="w-44 md:w-80 rounded-3xl -z-50 md:my-10"
           style={{ opacity: imageOpacity, scale: imageScale }}
         />
 
         <motion.p
-          className="font-medium text-xl text-gray-300 uppercase my-6"
+          className="font-medium md:text-xl leading-loose text-gray-300 uppercase my-6"
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ margin: "-200px" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
@@ -82,7 +83,7 @@ const AboutMe = ({ containerRef }: Props) => {
           collaboration.
         </motion.p>
         <motion.p
-          className="font-medium text-xl text-gray-300 uppercase my-6"
+          className="font-medium md:text-xl leading-loose text-gray-300 uppercase my-6"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
