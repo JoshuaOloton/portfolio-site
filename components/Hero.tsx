@@ -17,8 +17,8 @@ const Hero = ({ onProjectsClick }: Props) => {
   return (
     <section className={`${inter.className} w-full h-screen snap-start py-20`}>
       {/* <HeroHighlight> */}
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] xl:grid-cols-[3fr_2fr] h-full w-full max-w-5xl m-auto">
-        <div className="flex flex-col justify-center">
+      <div className="grid justify-center grid-cols-1 xl:grid-cols-[3fr_2fr] h-full w-full max-w-3xl m-auto">
+        <div className="flex flex-col justify-center md:items-center">
           <motion.h3 className="font-bold text-4xl md:text-6xl my-7 flex flex-col xxs:flex-row">
             <motion.p
               initial={{ 
@@ -70,7 +70,7 @@ const Hero = ({ onProjectsClick }: Props) => {
             />
           </motion.h3>
           <motion.p 
-            className="mt-5 lg:mt-0 text-base lg:text-lg leading-loose lg:leading-[2.5]"
+            className="mt-5 lg:mt-0 text-base md:text-xl lg:text-xl xl:text-xl leading-loose md:leading-[2.2] lg:leading-[2.5] text-left md:text-center xl:text-left"
             initial={{ 
               opacity: 0,
               y: 50

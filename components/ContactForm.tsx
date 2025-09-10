@@ -38,7 +38,7 @@ const ContactForm = ({}: Props) => {
     <motion.form
       method="POST"
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-lg mx-auto md:mx-0 space-y-6"
+      className="w-full max-w-lg mx-auto md:mx-0 space-y-3 md:space-y-6"
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.6 }}

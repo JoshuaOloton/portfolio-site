@@ -1,9 +1,9 @@
 import ContactForm from "./ContactForm";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+
 import { inter } from "@/app/fonts";
-import { IoMdMail } from "react-icons/io";
 import { motion } from "motion/react";
+import { socialLinks } from "@/app/data/socials";
 
 type Props = {
   ref: React.RefObject<HTMLDivElement>;
@@ -13,36 +13,13 @@ const ContactMe = ({ ref }: Props) => {
 
   const titleText: string = "CONTACT ME";
 
-  const socialLinks = [
-    {
-      href: "https://github.com/JoshuaOloton",
-      icon: <FaGithub />,
-      text: "JoshuaOloton on Github",
-    },
-    {
-      href: "https://www.linkedin.com/in/joshua-oloton/",
-      icon: <FaLinkedin />,
-      text: "joshua-oloton on LinkedIn",
-    },
-    {
-      href: "mailto:olotonjoshua23@gmail.com",
-      icon: <IoMdMail />,
-      text: "olotonjoshua23@gmail.com",
-    },
-    {
-      href: "https://x.com/josh_thedev_",
-      icon: <FaXTwitter />,
-      text: "@josh_thedev_ on X",
-    }
-  ];
-
   return (
     <section
       className={`${inter.className} section-layout`}
       ref={ref}
       id="contact"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:h-screen px-6 py-16 md:px-20 md:py-24 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:h-screen px-6 md:px-20 items-center">
         {/* Left side - Form */}
         <div className="lg:col-span-3 w-full">
           <div className="text-center md:text-left mb-8">

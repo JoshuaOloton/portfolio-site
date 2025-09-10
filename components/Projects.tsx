@@ -10,6 +10,7 @@ import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { projects } from "@/app/data/projects";
 import React, { useRef, useEffect, useState } from "react";
+import ProjectTags from "./ProjectTags";
 
 type Props = {
   ref: React.RefObject<HTMLDivElement>;
@@ -51,7 +52,7 @@ const Projects = ({ ref }: Props) => {
       ref={ref}
       id="projects"
     >
-      <div className="flex flex-col justify-center items-center relative w-full">
+      <div className="flex flex-col justify-center items-center relative w-full h-full">
         <div className="">
           <motion.h3
             id="projects-heading"
@@ -89,7 +90,7 @@ const Projects = ({ ref }: Props) => {
         </div>
         <div
           aria-label="Projects Carousel"
-          className="flex gap-8 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar"
+          className="flex items-center gap-8 w-full h-full  flex-1 overflow-x-scroll snap-x snap-mandatory no-scrollbar"
           ref={projectsCarouselRef}
         >
           {projects.map((project) => (
@@ -98,14 +99,14 @@ const Projects = ({ ref }: Props) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               key={project.id}
-              className="w-full px-12 md:px-52 py-0 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg"
+              className="w-full px-8 md:px-28 lg:px-36 py-0 flex-shrink-0 flex flex-col gap-0 snap-center rounded-2xl shadow-lg border border-gray-200/10"
             >
               <motion.img
                 initial={{ y: -100 }}
                 whileInView={{ y: 0 }}
                 // transition={{ ease: "easeOut" }}
                 src={project.image}
-                className="w-1/2 mx-auto my-3"
+                className="w-5/6 lg:w-2/5 mx-auto my-3"
                 alt={project.title}
               />
               <h4 className="text-lg md:text-xl tracking-wider font-bold my-2">
@@ -120,31 +121,10 @@ const Projects = ({ ref }: Props) => {
                 </a>
               </h4>
               <hr className="w-1/5 m-auto border border-yellow-500 my-2" />
-              <p className="text-justify tracking-normal md:tracking-wide leading-7 my-1">
+              <p className="text-xs md:text-base text-justify tracking-tight sm:tracking-normal md:tracking-wide leading-7 my-1">
                 {project.description.substring(0, 200)}...
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-0 gap-y-2 md:gap-y-4 my-1 md:my-3">
-                {project.tags.map((tag, index) => (
-                  <React.Fragment key={index}>
-                    <motion.span
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: ((index + 1) * 0.95) / 5 }}
-                      className="bg-[#1F1F1F] text-gray-200 border border-gray-700 rounded-full px-4 py-1 text-xs md:text-sm font-medium shadow-sm hover:bg-[#2A2A2A] transition-colors duration-200"
-                    >
-                      {tag}
-                    </motion.span>
-                    <motion.span
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: ((index + 1) * 0.95) / 5 }}
-                      className="text-gray-300 last:hidden"
-                    >
-                      <Dot size={26} />
-                    </motion.span>
-                  </React.Fragment>
-                ))}
-              </div>
+              <ProjectTags tags={project.tags} />
             </motion.div>
           ))}
         </div>
