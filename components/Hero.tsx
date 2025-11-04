@@ -1,12 +1,10 @@
 "use client";
 
 import { FaArrowDownLong } from "react-icons/fa6";
-import { HeroHighlight } from "./ui/hero-highlight";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { inter } from "@/app/fonts";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
-import { useScrollToSection } from "@/app/hooks/useScrollToSection";
 
 type Props = {
   onProjectsClick: () => void;

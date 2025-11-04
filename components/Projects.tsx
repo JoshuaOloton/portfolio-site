@@ -3,7 +3,6 @@
 import {
   ChevronLeft,
   ChevronRight,
-  Dot,
   SquareArrowOutUpRight,
 } from "lucide-react";
 import { inter } from "@/app/fonts";

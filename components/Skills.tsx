@@ -1,7 +1,7 @@
 "use client";
 
 import { inter } from "@/app/fonts";
-import { animate, delay, motion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { skills } from "@/app/data/skills";
 import React from "react";
 import Favorites from "./Favorites";

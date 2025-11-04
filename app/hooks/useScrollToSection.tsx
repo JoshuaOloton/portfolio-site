@@ -1,4 +1,3 @@
-import { useRef } from "react"
 
 
 // Custom hook for smooth scrolling to sections

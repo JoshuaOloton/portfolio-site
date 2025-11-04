@@ -6,9 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useEffect } from "react";
 
-type Props = {};
 
-const ContactForm = ({}: Props) => {
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -32,7 +31,7 @@ const ContactForm = ({}: Props) => {
     if (isSubmitSuccessful) {
       reset({ name: "", email: "", message: "" });
     }
-  }, [isSubmitSuccessful]);
+  }, [reset, isSubmitSuccessful]);
   
   return (
     <motion.form

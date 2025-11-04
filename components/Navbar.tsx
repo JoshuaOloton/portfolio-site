@@ -1,6 +1,5 @@
 "use client";
 
-import { useScrollToSection } from '@/app/hooks/useScrollToSection';
 import { FloatingNav } from './ui/floating-navbar'
 import { CiHome, CiCircleInfo  } from "react-icons/ci";
 import { IoIosContact } from "react-icons/io";

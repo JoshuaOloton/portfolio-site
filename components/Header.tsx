@@ -3,9 +3,8 @@
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'motion/react';
 
-type Props = {}
 
-const Header = ({}: Props) => {
+const Header = () => {
   return (
     <header className='absolute top-0 left-0 right-0 flex justify-between items-center p-5 max-w-6xl mx-auto bg:black/50 backdrop-blur-sm z-20'>
     {/* <header className='sticky top-0 flex justify-between items-center p-5 max-w-6xl mx-auto bg:black/50 backdrop-blur-md z-20'> */}

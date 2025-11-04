@@ -2,12 +2,9 @@ import { inter } from "@/app/fonts";
 import {
   motion,
   useTransform,
-  useScroll,
-  useMotionValueEvent,
+  useScroll
 } from "motion/react";
 import { useRef } from "react";
-import Image from "next/image";
-import joshua from "@/public/images/joshua.jpeg";
 
 type Props = {
   containerRef: React.RefObject<HTMLDivElement | null>;
