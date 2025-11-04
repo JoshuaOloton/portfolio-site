@@ -74,7 +74,7 @@ const AboutMe = ({ containerRef }: Props) => {
           viewport={{ margin: "-200px" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
         >
-          I'm a software engineer driven by curiosity and a passion for building
+          I&apos;m a software engineer driven by curiosity and a passion for building
           impactful solutions. With a background in web development and a love
           for problem-solving, I enjoy bringing ideas to life through code and
           collaboration.
@@ -86,9 +86,9 @@ const AboutMe = ({ containerRef }: Props) => {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
           viewport={{ margin: "-200px" }}
         >
-          Outside work, you'll find me exploring new tech, contributing to open
-          source, or volunteering within the community. I believe in tech's
-          power to transform lives, and I'm excited for what's next.
+          Outside work, you&apos;ll find me exploring new tech, contributing to open
+          source, or volunteering within the community. I believe in tech&apos;s
+          power to transform lives, and I&apos;m excited for what&apos;s next.
         </motion.p>
 
         {/* <motion.div

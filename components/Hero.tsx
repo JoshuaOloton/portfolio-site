@@ -40,7 +40,7 @@ const Hero = ({ onProjectsClick }: Props) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.3, delay: 1.5 }}
             >
-              I'm Joshua
+              I&apos;m Joshua
             </motion.span>
           </motion.h3>
           <motion.h3 
@@ -99,7 +99,7 @@ const Hero = ({ onProjectsClick }: Props) => {
               delay: 3.5
             }}
           >
-            Let's create something incredible together!
+            Let&apos;s create something incredible together!
           </motion.p>
           <motion.div 
             className="my-10 lg:my-6"

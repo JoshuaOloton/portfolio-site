@@ -54,7 +54,7 @@ const ContactMe = ({ ref }: Props) => {
               transition={{ duration: 0.5, delay: 0.4 }}
               // viewport={{ once: true }}
             >
-              I'd love to hear from you — whether it's a question, a
+              I&apos;d love to hear from you — whether it&apos;s a question, a
               collaboration idea, or just a friendly hello!
             </motion.p>
           </div>
